@@ -1,9 +1,13 @@
+from dotenv import load_dotenv
 from pydantic_ai import Agent, RunContext
 from tools.internet_search import internet_search
 
 
+load_dotenv()  # Load environment variables from .env file
+
+
 research_agent = Agent(
-    "groq:llama-3.3-70b-versatile",
+    "groq:llama-3.1-8b-instant",
     system_prompt="""
     You are an AI research assistant.
     Use the search_tool to gather information from the internet.
